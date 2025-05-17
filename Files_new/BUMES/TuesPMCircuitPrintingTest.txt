@@ -1,0 +1,8 @@
+//MACHINING STOP
+resourceSeize('Rosie')
+resourceSeize('convStn1','agvD')
+
+circuitVision_complete()
+resourceRelease('convStn1')
+resourceRelease('Rosie')
+

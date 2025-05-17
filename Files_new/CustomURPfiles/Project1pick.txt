@@ -1,0 +1,18 @@
+ Program
+   Robot Program
+     Set DO[0]=Off
+     MoveJ
+       PHOME
+       Waypoint_5
+       Waypoint_7
+       Wait: 0.5
+       Set DO[0]=On
+       Wait: 0.5
+       lift
+       Waypoint_6
+       Waypoint_1
+       Wait: 0.5
+       Set DO[0]=Off
+       Wait: 0.5
+       Waypoint_2
+       Waypoint_3

@@ -1,0 +1,67 @@
+def Project1pick3():
+  set_tool_voltage(0)
+  modbus_add_signal("127.0.0.1", 255, 1, 2, "MODBUS_1", False)
+  modbus_set_signal_update_frequency("MODBUS_1", 10)
+  modbus_add_signal("127.0.0.1", 255, 128, 0, "atLocation", False)
+  modbus_set_signal_update_frequency("atLocation", 10)
+  modbus_add_signal("10.241.34.56", 1, 1009, 3, "MODBUS_2", False)
+  modbus_set_signal_update_frequency("MODBUS_2", 10)
+  modbus_set_runstate_dependent_choice("MODBUS_2",0)
+  set_safety_mode_transition_hardness(0)
+  set_gravity([0.0, 0.0, 9.82])
+  set_tcp(p[0.0,0.0,0.0,0.0,0.0,0.0])
+  set_payload(1.0)
+  step_count_9dcd0ba1_d11b_42b8_b275_8d807a8411d8 = 0.0
+  thread Step_Counter_Thread_544c9fd5_7f06_4e61_a5b9_45d0981bf979():
+    while (True):
+      step_count_9dcd0ba1_d11b_42b8_b275_8d807a8411d8 = step_count_9dcd0ba1_d11b_42b8_b275_8d807a8411d8 + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_544c9fd5_7f06_4e61_a5b9_45d0981bf979()
+  set_standard_analog_input_domain(0, 1)
+  set_standard_analog_input_domain(1, 1)
+  set_tool_analog_input_domain(0, 0)
+  set_tool_analog_input_domain(1, 0)
+  set_analog_outputdomain(0, 0)
+  set_analog_outputdomain(1, 0)
+  set_input_actions_to_default()
+  $ 1 "Robot Program"
+  $ 2 "Set DO[0]=Off"
+  set_standard_digital_out(0, False)
+  $ 3 "MoveL"
+  $ 4 "PHOME" "breakAfter"
+  movel(p[.109127906840, -.486914572426, .431883921425, .000084562325, 3.141542566357, -.000262608165], a=1.2, v=0.25)
+  $ 5 "Waypoint_2" "breakAfter"
+  movel(p[-.541332260951, -.379483868959, .067154160692, -.043005342729, 3.117462873945, -.012244863264], a=1.2, v=0.25)
+  $ 6 "Waypoint_3" "breakAfter"
+  movel(p[-.541322798891, -.379483653931, .050187741492, -.042894287557, 3.117486951414, -.012176768074], a=1.2, v=0.25)
+  $ 7 "Wait: 0.5"
+  sleep(0.5)
+  $ 8 "Set DO[0]=On"
+  set_standard_digital_out(0, True)
+  $ 9 "Wait: 0.5"
+  sleep(0.5)
+  $ 10 "Set DO[1]=Off"
+  set_standard_digital_out(1, False)
+  $ 11 "Wait: 0.5"
+  sleep(0.5)
+  $ 12 "Waypoint_4" "breakAfter"
+  movel(p[-.544016105420, -.379847327628, .135579699437, -.042849805170, 3.108090539031, -.005604279302], a=1.2, v=0.25)
+  $ 13 "Waypoint_5" "breakAfter"
+  movel(p[.151728310600, -.372903317700, .193086826092, -.043159088646, 3.127854824048, -.010189603531], a=1.2, v=0.25)
+  $ 14 "Waypoint_6" "breakAfter"
+  movel(p[.803616001341, -.031700845993, .051039038437, 2.225958855669, -2.211993717589, .005447813635], a=1.2, v=0.25)
+  $ 15 "Waypoint_7" "breakAfter"
+  movel(p[.803625640649, -.031669229416, .031593803238, 2.226083431637, -2.212199436621, .005513847637], a=1.2, v=0.25)
+  $ 16 "Wait: 0.5"
+  sleep(0.5)
+  $ 17 "Set DO[0]=Off"
+  set_standard_digital_out(0, False)
+  $ 18 "Wait: 0.5"
+  sleep(0.5)
+  $ 19 "Waypoint_6" "breakAfter"
+  movel(p[.803616001341, -.031700845993, .051039038437, 2.225958855669, -2.211993717589, .005447813635], a=1.2, v=0.25)
+  $ 20 "Waypoint_1" "breakAfter"
+  movel(p[.477211679861, -.033348715952, .129551309177, 2.225933645461, -2.212029143659, .005311450860], a=1.2, v=0.25)
+end

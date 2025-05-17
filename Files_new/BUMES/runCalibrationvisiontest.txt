@@ -1,0 +1,5 @@
+resourceSeize('Rosie')
+urDashboard('Rosie', 'me345_admin/_adminLinearIndex5.urp')
+runCalibration()
+urDashboard('Rosie', 'me345_admin/_adminRobotHome.urp')
+resourceRelease('Rosie')

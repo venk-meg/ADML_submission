@@ -1,0 +1,19 @@
+//CircuitVision Program Main
+
+//MACHINING START
+resourceSeize('Mary')
+urDashboard('Mary', 'DirectInkWrite/gravityFeederT.urp')
+urDashboard('Mary', 'DirectInkWrite/stockSTUVToMill.urp')  //Make sure this includes machining
+urDashboard('Mary', 'DirectInkWrite/UnloadMillToPHome.urp')
+urDashboard('Mary', 'DirectInkWrite/pHometoInvD.urp') //make one custom program for this
+resourceSeize('convStn3','agvD')
+urDashboard('Mary', 'DirectInkWrite/InvDToConveyor.urp')
+resourceRelease('convStn3')
+resourceRelease('Mary')
+//MACHINING STOP
+resourceSeize('Rosie')
+resourceSeize('convStn1','agvD')
+circuitVision_complete()
+resourceRelease('convStn1')
+resourceSeize('Rosie')
+
